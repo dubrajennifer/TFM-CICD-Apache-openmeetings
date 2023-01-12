@@ -63,7 +63,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.inject.Inject;
+
 
 @CreateDS(name = "omDS",
 	partitions = {
@@ -79,7 +81,7 @@ class TestLdap extends AbstractWicketTesterTest {
 	private static final String USER3 = "ldaptest3";
 	private static final Map<String, LdapConfig> CFG_MAP = new HashMap<>();
 	private static final Properties PROPS = new Properties();
-	@Autowired
+	@Inject
 	private LdapConfigDao ldapDao;
 
 	@RegisterExtension

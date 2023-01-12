@@ -27,7 +27,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload2.FileItem;
 import org.apache.openmeetings.backup.BackupImport;
 import org.apache.openmeetings.db.dao.file.FileItemDao;
 import org.apache.openmeetings.db.entity.basic.Client;
@@ -35,17 +35,18 @@ import org.apache.openmeetings.db.entity.user.User;
 import org.apache.openmeetings.web.common.upload.UploadResourceReference;
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.protocol.http.servlet.MultipartServletWebRequest;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jakarta.inject.Inject;
 
 public class BackupUploadResourceReference extends UploadResourceReference {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(BackupUploadResourceReference.class);
 
-	@SpringBean
+	@Inject
 	private FileItemDao fileDao;
-	@SpringBean
+	@Inject
 	private BackupImport backupImport;
 
 	public BackupUploadResourceReference() {

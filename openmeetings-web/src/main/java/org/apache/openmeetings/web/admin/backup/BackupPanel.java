@@ -48,7 +48,6 @@ import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.resource.FileSystemResource;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,6 +57,7 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.common.NotificationPanel
 import de.agilecoders.wicket.core.markup.html.bootstrap.components.progress.UpdatableProgressBar;
 import de.agilecoders.wicket.core.markup.html.bootstrap.utilities.BackgroundColorBehavior;
 import de.agilecoders.wicket.extensions.markup.html.bootstrap.icon.FontAwesome6IconType;
+import jakarta.inject.Inject;
 /**
  * Panel component to manage Backup Import/Export
  *
@@ -72,9 +72,9 @@ public class BackupPanel extends AdminBasePanel {
 	private final NotificationPanel feedback = new NotificationPanel("feedback");
 	private UploadForm upload;
 
-	@SpringBean
+	@Inject
 	private BackupExport backupExport;
-	@SpringBean
+	@Inject
 	private BackupImport backupImport;
 
 	public BackupPanel(String id) {

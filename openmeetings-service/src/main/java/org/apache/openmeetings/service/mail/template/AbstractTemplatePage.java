@@ -35,13 +35,15 @@ import org.apache.wicket.protocol.http.servlet.ServletWebRequest;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
+import jakarta.inject.Inject;
+
 public abstract class AbstractTemplatePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 	public static final String COMP_ID = "container";
 	protected final Locale locale;
 	protected final ComponentRenderer renderer;
 
-	@SpringBean
+	@Inject
 	protected IApplication app;
 
 	protected AbstractTemplatePage(Locale locale) {

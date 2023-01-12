@@ -26,12 +26,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
+import jakarta.inject.Inject;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Marshaller;
 
@@ -43,12 +42,10 @@ import org.apache.openmeetings.db.entity.user.Group;
 import org.apache.openmeetings.db.entity.user.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 
 class TestExport extends AbstractOmServerTest {
-	@Autowired
+	@Inject
 	private FileItemDao fileItemDao;
 
 	@Test
@@ -68,12 +65,6 @@ class TestExport extends AbstractOmServerTest {
 		JAXBContext jc = JAXBContext.newInstance(eClazz);
 		Marshaller marshaller = jc.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		marshaller.setProperty(CharacterEscapeHandler.class.getName(), new CharacterEscapeHandler() {
-			@Override
-			public void escape(char[] ac, int i, int j, boolean flag, Writer writer) throws IOException {
-				writer.write(ac, i, j);
-			}
-		});
 		StringWriter writer = new StringWriter();
 		marshaller.marshal(u, writer);
 		Assertions.assertNotNull(writer.getBuffer());

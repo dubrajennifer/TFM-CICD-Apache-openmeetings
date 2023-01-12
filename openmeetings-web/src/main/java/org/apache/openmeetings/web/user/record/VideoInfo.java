@@ -31,16 +31,19 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.spring.injection.annot.SpringBean;
+
+import jakarta.inject.Inject;
+
 
 public class VideoInfo extends Panel {
 	private static final long serialVersionUID = 1L;
 	private final Form<Void> form = new Form<>("form");
 	private final Label dateLbl = new Label("recordEnd", Model.of(""));
 	private final Label roomNameLbl = new Label("roomName", Model.of(""));
-	@SpringBean
+
+	@Inject
 	private RoomDao roomDao;
-	@SpringBean
+	@Inject
 	private RecordingChunkDao chunkDao;
 
 	public VideoInfo(String id) {

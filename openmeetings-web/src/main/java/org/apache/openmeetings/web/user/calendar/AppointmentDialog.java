@@ -84,7 +84,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.model.util.CollectionModel;
-import org.apache.wicket.spring.injection.annot.SpringBean;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wicketstuff.select2.Select2MultiChoice;
@@ -96,6 +96,7 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.button.BootstrapAjaxLink
 import de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons;
 import de.agilecoders.wicket.core.markup.html.bootstrap.common.NotificationPanel;
 import de.agilecoders.wicket.core.markup.html.bootstrap.dialog.Modal;
+import jakarta.inject.Inject;
 
 public class AppointmentDialog extends Modal<Appointment> {
 	private static final long serialVersionUID = 1L;
@@ -117,17 +118,18 @@ public class AppointmentDialog extends Modal<Appointment> {
 		USER
 		, GROUP
 	}
-	@SpringBean
+
+	@Inject
 	private RoomDao roomDao;
-	@SpringBean
+	@Inject
 	private UserDao userDao;
-	@SpringBean
+	@Inject
 	private AppointmentDao apptDao;
-	@SpringBean
+	@Inject
 	private GroupUserDao groupUserDao;
-	@SpringBean
+	@Inject
 	private AppointmentManager apptManager;
-	@SpringBean
+	@Inject
 	private ConfigurationDao cfgDao;
 
 	public AppointmentDialog(String id, CalendarPanel calendarPanel, CompoundPropertyModel<Appointment> model) {

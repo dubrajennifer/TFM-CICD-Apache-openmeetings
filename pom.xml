@@ -118,12 +118,13 @@
 		<xstream.version>1.4.20</xstream.version>
 		<api-all.version>2.1.3</api-all.version>
 		<caldav4j.version>1.0.5</caldav4j.version>
+		<jackrabbit-webdav.version>2.21.16-SNAPSHOT</jackrabbit-webdav.version>
 		<tika-parsers.version>2.8.0</tika-parsers.version>
 		<slf4j.version>2.0.7</slf4j.version>
 		<logback.version>1.4.7</logback.version>
 		<jetty.version>11.0.15</jetty.version>
 		<license.excludedScopes>test</license.excludedScopes>
-		<bcprov-jdk15on.version>1.70</bcprov-jdk15on.version>
+		<bcprov.version>1.73</bcprov.version>
 		<mockito.version>5.2.0</mockito.version>
 		<quartz.version>2.3.2</quartz.version>
 		<kurento.version>7.0.0</kurento.version>
@@ -694,8 +695,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcprov-jdk15on</artifactId>
-				<version>${bcprov-jdk15on.version}</version>
+				<artifactId>bcprov-jdk18on</artifactId>
+				<version>${bcprov.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tika</groupId>
@@ -909,9 +910,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.jackrabbit</groupId>
-				<artifactId>jackrabbit-webdav</artifactId>
-				<version>2.21.15-SNAPSHOT</version>
-				<classifier>jakarta</classifier>
+				<artifactId>jackrabbit-webdav-jakarta</artifactId>
+				<version>${jackrabbit-webdav.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.mysql</groupId>

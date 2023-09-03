@@ -12,7 +12,7 @@ It uses API functions of Media Server for Remoting and Streaming [Kurento](https
 Getting Started
 ===================
 
-Please visit the project website for the latest information:
+Please visit the project website for the latest idrmation:
   - https://openmeetings.apache.org/
 
 Documentation for Installation and Upgrade:

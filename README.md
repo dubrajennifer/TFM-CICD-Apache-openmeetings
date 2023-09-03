@@ -17,7 +17,7 @@ Please visit the project website for the latest idrmation:
 
 Documentation for Installation and Upgrade:
   - https://openmeetings.apache.org/installation.html
-  - https://openmeetings.apache.org/Upgrade.html
+  - https://openmeetings.apache.org/Upgrade.htm
 
 Along with the developer mailing list archive:
   - https://openmeetings.apache.org/mailing-lists.html

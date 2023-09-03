@@ -11,7 +11,7 @@ Server for Remoting and Streaming.
 
 
 Release Notes
-=============
+===========
 see CHANGES file for detailed log
 
 _Restyled UI_
@@ -35,7 +35,7 @@ More info: http://incubator.apache.org/openmeetings/voip-sip-integration.html
 
 _Install/Backup/Import via command line_
  Additionally to the Web-Interface you can now do all basic operations via the console. 
- Just cd to your OpenMeetings installation directory and type ìadminî and you will see 
+ Just cd to your OpenMeetings installation directory and type ‚Äúadmin‚Äù and you will see 
  all options available (OpenMeetings service should be shut down while doing those operations)
 
 _Using SWF10 for Video Components_

@@ -15,7 +15,7 @@ Getting Started
 Please visit the project website for the latest idrmation:
   - https://openmeetings.apache.org/
 
-Documentation for Installation and Upgrade:
+Documentation for Installation and Upgrade
   - https://openmeetings.apache.org/installation.html
   - https://openmeetings.apache.org/Upgrade.ht
 
